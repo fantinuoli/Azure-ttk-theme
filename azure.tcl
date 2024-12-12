@@ -28,7 +28,7 @@ proc set_theme {mode} {
             -insertcolor $colors(-fg) \
             -insertwidth 1 \
             -fieldbackground $colors(-selectbg) \
-            -font {"Segoe Ui" 10} \
+            -font {13} \
             -borderwidth 1 \
             -relief flat
 
@@ -42,14 +42,14 @@ proc set_theme {mode} {
 
         ttk::style map . -foreground [list disabled $colors(-disabledfg)]
 
-        option add *font [ttk::style lookup . -font]
+        #option add *font [ttk::style lookup . -font]
         option add *Menu.selectcolor $colors(-fg)
     
 	} elseif {$mode == "light"} {
 		ttk::style theme use "azure-light"
 
         array set colors {
-            -fg             "#000000"
+            -fg             "#36454F"
             -bg             "#ffffff"
             -disabledfg     "#737373"
             -disabledbg     "#ffffff"
@@ -67,7 +67,7 @@ proc set_theme {mode} {
             -insertcolor $colors(-fg) \
             -insertwidth 1 \
             -fieldbackground $colors(-selectbg) \
-            -font {"Segoe Ui" 10} \
+            -font {13} \
             -borderwidth 1 \
             -relief flat
 
@@ -81,7 +81,7 @@ proc set_theme {mode} {
 
         ttk::style map . -foreground [list disabled $colors(-disabledfg)]
 
-        option add *font [ttk::style lookup . -font]
+        #option add *font [ttk::style lookup . -font]
         option add *Menu.selectcolor $colors(-fg)
 	}
 }

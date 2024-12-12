@@ -197,7 +197,7 @@ namespace eval ttk::theme::azure-light {
         # Elements
 
         # Button
-        ttk::style configure TButton -padding {8 4 8 4} -width -10 -anchor center
+        ttk::style configure TButton -padding {6 1 1 1} -width -4 -anchor center 
 
         ttk::style element create Button.button image \
             [list $I(rect-basic) \
@@ -206,11 +206,30 @@ namespace eval ttk::theme::azure-light {
                 selected $I(rect-basic) \
                 pressed $I(rect-basic) \
                 active $I(button-hover) \
-                focus $I(button-hover) \
+            ] -border 4 -sticky ewns
+
+       # New ToolbuttonW widget identical to Toolbutton but with -anchor w
+        ttk::style layout ToolbuttonW {
+            ToolbuttonW.button -children {
+                ToolbuttonW.padding -children {
+                    ToolbuttonW.label -side left -expand true
+                } 
+            }
+        }
+
+        ttk::style configure ToolbuttonW -padding {1 1 1 1} -width -4 -anchor w
+
+        ttk::style element create ToolbuttonW.button image \
+            [list $I(empty) \
+                {selected disabled} $I(empty) \
+                disabled $I(empty) \
+                selected $I(rect-basic) \
+                pressed $I(rect-basic) \
+                active $I(rect-basic) \
             ] -border 4 -sticky ewns
 
         # Toolbutton
-        ttk::style configure Toolbutton -padding {8 4 8 4} -width -10 -anchor center
+        ttk::style configure Toolbutton -padding {1 1 1 1} -width -4 -anchor center
 
         ttk::style element create Toolbutton.button image \
             [list $I(empty) \
@@ -265,7 +284,6 @@ namespace eval ttk::theme::azure-light {
                 selected $I(rect-accent) \
                 pressed $I(rect-accent) \
                 active $I(rect-accent-hover) \
-                focus $I(rect-accent-hover) \
             ] -border 4 -sticky ewns
 
         # Checkbutton
